@@ -15,16 +15,16 @@ genome=$5 # genome LD files such as those provided with magma, note ancestry spe
 geneList=$6 # a file containing lists of ENTREZ gene IDs for gene set testing (ie SET1 1546 90122 386 6001 23019)
 
 # Creates gene annotation
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --annotate window=1 --snp-loc $workDir/$trait/$inFile --gene-loc $geneLoc --out $workDir/$trait
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --annotate window=1 --snp-loc $inFile --gene-loc $geneLoc --out $workDir/$trait
 
 # Calculates genewise enrichment using mean method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $workDir/*.genes.annot --gene-model snp-wise=mean --seed 1 --pval $workDir/$trait/$inFile use=1,4 ncol=5 --out $workDir/$trait/$trait'.mean'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $workDir/*.genes.annot --gene-model snp-wise=mean --seed 1 --pval $inFile use=1,4 ncol=5 --out $workDir/$trait/$trait'.mean'
 
 # Calculates genewise enrichment using multi method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $workDir/*.genes.annot --gene-model snp-wise=multi --seed 1 --pval $workDir/$trait/$inFile use=1,4 ncol=5 --out $workDir/$trait/$trait'.multi'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $workDir/*.genes.annot --gene-model snp-wise=multi --seed 1 --pval $inFile use=1,4 ncol=5 --out $workDir/$trait/$trait'.multi'
 
 # Calculates geneset enrichment using mean method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $workDir/*_mean.genes.raw --set-annot $geneList --out $workDir/$trait'.mean'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $workDir/$trait/*_mean.genes.raw --set-annot $geneList --out $workDir/$trait/$trait'.mean'
 
 # Calculates geneset enrichment using multi method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $workDir/*_multi.genes.raw --set-annot $geneList --out $workDir/$trait'.multi'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $workDir/$trait/*_multi.genes.raw --set-annot $geneList --out $workDir/$trait/$trait'.multi'
