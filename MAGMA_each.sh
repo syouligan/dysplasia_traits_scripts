@@ -15,7 +15,7 @@ genome=$5 # genome LD files such as those provided with magma, note ancestry spe
 geneList=$6 # a file containing lists of ENTREZ gene IDs for gene set testing (ie SET1 1546 90122 386 6001 23019)
 
 # Creates gene annotation
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --annotate window=1 --snp-loc $inFile --gene-loc $geneLoc --out $inPath/
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --annotate window=1 --snp-loc $inFile --gene-loc $geneLoc --out $inPath/$trait
 
 # Calculates genewise enrichment using mean method
 /share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $inPath/*.genes.annot --gene-model snp-wise=mean --seed 1 --pval $inFile use=1,4 ncol=5 --out $inPath/$trait'.mean'
