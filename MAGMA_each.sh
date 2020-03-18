@@ -24,7 +24,7 @@ geneList=$6 # a file containing lists of ENTREZ gene IDs for gene set testing (i
 /share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --bfile $genome --gene-annot $inPath/*.genes.annot --gene-model snp-wise=multi --seed 1 --pval $inFile use=1,4 ncol=5 --out $inPath/$trait'.multi'
 
 # Calculates geneset enrichment using mean method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $inPath/$trait/*mean.genes.raw --set-annot $geneList --out $inPath/$trait'.mean'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $inPath/*mean.genes.raw --set-annot $geneList --out $inPath/$trait'.mean'
 
 # Calculates geneset enrichment using multi method
-/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $inPath/$trait/*multi.genes.raw --set-annot $geneList --out $inPath/$trait'.multi'
+/share/ScratchGeneral/scoyou/local/bin/MAGMA/magma --gene-results $inPath/*multi.genes.raw --set-annot $geneList --out $inPath/$trait'.multi'
