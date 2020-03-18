@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run MAGMA on 
+# Run MAGMA on all folders in workDir
 # usage: writes to sample input directory
 # ./MAGMA_each.sh (workDir) (inFile) (geneLoc) (trait) (genome) (geneList)
 # eg ./MAGMA_each.sh /share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/skeletal_traits Biobank2-British-Bmd-As-C-Gwas-SumStats_MAGMA.input.txt /share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37/NCBI37.3.gene.loc UKBB_eBMD /share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur /share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/gene_sets/Dysplasia_ENTREZ.txt
