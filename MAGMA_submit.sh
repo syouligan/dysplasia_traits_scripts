@@ -12,10 +12,6 @@ geneLoc="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37
 genome="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur"
 geneList="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/gene_sets/Dysplasia_ENTREZ.txt"
 
-# Path to folder containing sample folders
-sample_Path=$workDir
-echo "sample_Path "$sample_Path
-
 # Make an array containing names of directories containing samples
 sample_arr=( $(ls $workDir) )
 echo "# in samples array ${#sample_arr[@]}"
@@ -28,11 +24,11 @@ echo "names in samples array ${sample_arr[@]}"
 for sample in ${sample_arr[0]}; do
 
 # Define input directory, define and make output and log directories
-inPath=$sample_Path/$sample
+inPath=$workDir/$sample
 echo "inPath $inPath"
 
 # Path for log files
-logDir=$sample_Path/$sample
+logDir=$workDir/$sample
 mkdir -p $logDir
 echo "logDir $logDir"
 
@@ -46,5 +42,5 @@ Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_e
 # Submit to queue
 echo "Command "$Command
 # $CommandPE
-qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
+# qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
 done
