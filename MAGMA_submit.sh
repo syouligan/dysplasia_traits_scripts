@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Perform MAGMA on all trait folder in directory
+## Perform MAGMA on all trait folder in directory using summary statistics
 #######
 
 # Number of cores
