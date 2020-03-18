@@ -18,10 +18,10 @@ echo "# in samples array ${#sample_arr[@]}"
 echo "names in samples array ${sample_arr[@]}"
 
 # Submit command for each sample in array
-# for sample in ${sample_arr[@]}; do
+for sample in ${sample_arr[@]}; do
 
 # Runs loop for only the first sample in array (used for development)
-for sample in ${sample_arr[0]}; do
+# for sample in ${sample_arr[0]}; do
 
 # Define input directory, define and make output and log directories
 inPath=$workDir/$sample
@@ -42,5 +42,5 @@ Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_e
 # Submit to queue
 echo "Command "$Command
 # $CommandPE
-# qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
+qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
 done
