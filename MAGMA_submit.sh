@@ -6,7 +6,7 @@
 # Number of cores
 ncores=20
 
-# Experimental info (update for single or paired reads, and readlength). Set paired to "yes" if appropriate. NOTE: reads are assumed to be stranded.
+# Experimental info. workDir is folder containing subfolders with summary stats for each trait
 workDir="/share/ScratchGeneral/scoyou/projects/dysplasia_traits/skeletal_traits"
 geneLoc="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37/NCBI37.3.gene.loc"
 genome="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur"
