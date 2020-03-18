@@ -7,7 +7,7 @@
 ncores=20
 
 # Experimental info. workDir is folder containing subfolders with summary stats for each trait
-workDir="/share/ScratchGeneral/scoyou/projects/dysplasia_traits/skeletal_traits"
+workDir="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/skeletal_traits"
 geneLoc="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37/NCBI37.3.gene.loc"
 genome="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur"
 geneList="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/gene_sets/Dysplasia_ENTREZ.txt"
