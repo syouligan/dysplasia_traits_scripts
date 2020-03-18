@@ -1,20 +1,12 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-## Perform MAGMA on all trait folder in directory using summary statistics
-=======
-## Perform MAGMA on all trait folder in directory
->>>>>>> b12e541c3256d548ed6080b2cd2a3e86a7518fab
+## Perform MAGMA on all trait folder in directory using summary statistics for each
 #######
 
 # Number of cores
 ncores=20
 
-<<<<<<< HEAD
 # Experimental info. workDir is folder containing subfolders with summary stats for each trait
-=======
-# Experimental info (update for single or paired reads, and readlength). Set paired to "yes" if appropriate. NOTE: reads are assumed to be stranded.
->>>>>>> b12e541c3256d548ed6080b2cd2a3e86a7518fab
 workDir="/share/ScratchGeneral/scoyou/projects/dysplasia_traits/skeletal_traits"
 geneLoc="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37/NCBI37.3.gene.loc"
 genome="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur"
@@ -45,11 +37,7 @@ mkdir -p $logDir
 echo "logDir $logDir"
 
 # Define input files
-<<<<<<< HEAD
 inFile=$inPath/$sample/*"_MAGMA.input.txt"
-=======
-inFile1=$inPath/$sample/*"_MAGMA.input.txt"
->>>>>>> b12e541c3256d548ed6080b2cd2a3e86a7518fab
 echo "inFile1 $inFile1"
 
 # Command to be executed
