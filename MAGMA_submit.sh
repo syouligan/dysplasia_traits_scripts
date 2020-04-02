@@ -29,12 +29,12 @@ inPath=$workDir/$sample
 echo "inPath $inPath"
 
 # Path for log files
-logDir=$inPath$geneset
+logDir=$inPath/$geneset
 mkdir -p $logDir
 echo "logDir $logDir"
 
 # Path for log files
-outDir=$inPath$geneset
+outDir=$inPath/$geneset
 mkdir -p $outDir
 echo "logDir $outDir"
 
