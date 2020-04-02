@@ -11,6 +11,7 @@ workDir="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/skeletal_traits"
 geneLoc="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/NCBI37/NCBI37.3.gene.loc"
 genome="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/MAGMA_files/g1000_eur/g1000_eur"
 geneList="/share/ScratchGeneral/scoyou/projects/dysplasia_GWAS/gene_sets/Dysplasia_ENTREZ.txt"
+geneset="dysplasia"
 
 # Make an array containing names of directories containing samples
 sample_arr=( $(ls $workDir) )
@@ -28,16 +29,21 @@ inPath=$workDir/$sample
 echo "inPath $inPath"
 
 # Path for log files
-logDir=$workDir/$sample
+logDir=$inPath$geneset
 mkdir -p $logDir
 echo "logDir $logDir"
+
+# Path for log files
+outDir=$inPath$geneset
+mkdir -p $outDir
+echo "logDir $outDir"
 
 # Define input files
 inFile=$inPath/*_MAGMA.input.txt
 echo "inFile1 $inFile1"
 
 # Command to be executed
-Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_each.sh $inPath $inFile $geneLoc $sample $genome $geneList"
+Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_each.sh $outPath $inFile $geneLoc $sample $genome $geneList"
 
 # Submit to queue
 echo "Command "$Command
