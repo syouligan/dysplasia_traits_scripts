@@ -18,7 +18,7 @@ sample_arr=( $(ls $workDir) )
 echo "# in samples array ${#sample_arr[@]}"
 echo "names in samples array ${sample_arr[@]}"
 
-# Submit command for each sample in array
+# Submit command for each sample in array.
 for sample in ${sample_arr[@]}; do
 
 # Runs loop for only the first sample in array (used for development)
