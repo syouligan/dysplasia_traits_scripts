@@ -29,24 +29,24 @@ inPath=$workDir/$sample
 echo "inPath $inPath"
 
 # Path for log files
-logDir=$inPath$geneset
+logDir=$inPath/$geneset
 mkdir -p $logDir
 echo "logDir $logDir"
 
 # Path for log files
-outDir=$inPath$geneset
+outDir=$inPath/$geneset
 mkdir -p $outDir
-echo "logDir $outDir"
+echo "outDir $outDir"
 
 # Define input files
 inFile=$inPath/*_MAGMA.input.txt
-echo "inFile1 $inFile1"
+echo "inFile $inFile"
 
 # Command to be executed
-Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_each.sh $outPath $inFile $geneLoc $sample $genome $geneList"
+Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_each.sh $outDir $inFile $geneLoc $sample $genome $geneList"
 
 # Submit to queue
 echo "Command "$Command
 # $CommandPE
-qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
+# qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
 done
