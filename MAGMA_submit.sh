@@ -48,5 +48,5 @@ Command="/home/scoyou/projects/dysplasia_traits/dysplasia_traits_scripts/MAGMA_e
 # Submit to queue
 echo "Command "$Command
 # $CommandPE
-# qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
+qsub -P OsteoporosisandTranslationalResearch -N 'MAGMA'$sample -b y -wd $logDir -j y -R y -l mem_requested=8G -pe smp $ncores -V -m bea -M s.youlten@garvan.org.au $Command
 done
